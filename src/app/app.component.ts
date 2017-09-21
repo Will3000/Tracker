@@ -10,7 +10,7 @@ import { ShowService } from './show.service';
 })
 
 export class AppComponent implements OnInit {
-  title = 'Tracker';
+  //title = 'Tracker';
   shows: Show[];
   selectedShow: Show;
   newShow: Show;

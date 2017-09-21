@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="header" style="text-align:center">
   <h2>
-    Welcome to {{title}}!
+    Which episode? 🤔
   </h2>
 </div>
 <div class="body">
@@ -20,16 +20,21 @@
           <span *ngIf="show === selectedShow; else elseBlock">🙉</span>
           <ng-template #elseBlock>🙈</ng-template>
         </div>
-        <span>{{show.name}}</span>
+        <div class="show-name">
+          <span>{{show.name}}</span>
+        </div>
+        <div class="show-ep">
+          <span>{{show.ep}}</span>
+        </div>
       </div>
     </div>
     <div class="group-right">
-      <span>{{show.ep}}</span>
-      <div class="ep-btn" (click)="onChange(show, '+')"><span class="plus">+</span></div>
-      <div class="ep-btn" (click)="onChange(show, '-')"><span class="minus">-</span></div>  
+        <div class="ep-btn" (click)="onChange(show, '+')"><span class="plus">+</span></div>
+        <div class="ep-btn" (click)="onChange(show, '-')"><span class="minus">-</span></div> 
     </div>
     <div *ngIf="show === selectedShow">
       <show-detail [show]="selectedShow"></show-detail>
     </div>
+    
   </div>
 </div>

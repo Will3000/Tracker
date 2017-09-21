@@ -1,13 +1,18 @@
 .row {
-	margin-bottom: 15px;
+	padding-right: 150px;
+	margin-bottom: 10px;
 }
 
 .show {
 	border: grey solid 1px;
 	border-radius: 2px;
-	display: flex;
+	display: inline-block;
 	font-size: 20px;
-	/*padding: 3px 15px 0px 15px;*/
+	/*padding: 0px 15px;*/
+	width: 80%;
+	height: 40px;
+	position: relative;
+	/*line-height: 40px;*/
 }
 
 .selected {
@@ -16,8 +21,8 @@
 
 .group-left {
 	background-color: #428bca;
-	width: 250px;
-	padding: 3px 15px 0px 15px;
+	/*width: 250px;*/
+	padding: 0px 15px 0px 15px;
 	color: white;
 }
 
@@ -27,8 +32,10 @@
 	display: inline-block;
 	width: 20px;
 	padding-right: 25px;
+	/*line-height: 40px;*/
+	vertical-align: middle;
 	/*border-right-width: 1px;*/
-	border-right: 1px solid white;
+	/*border-right: 1px solid white;*/
 }
 
 .group-left:hover,
@@ -38,7 +45,8 @@
 
 .group-right {
 	text-align: right;
-	width: 70%;
+	display: inline-block;
+	padding-left: 50px;
 }
 
 .plus {
@@ -47,12 +55,10 @@
 
 .minus {
 	color: red;
-	position: relative;
-	top: -2px;
 }
 
 .body {
-	font-family: Arial;
+	font-family: Helvetica;
 }
 
 .ep-btn {
@@ -67,3 +73,23 @@
 	margin: 10px;
 }
 
+h2 {
+	text-align: left;
+	color: orange;
+	font-family: Helvetica;
+}
+
+.show-ep {
+	/*vertical-align: middle;*/
+	/*text-align: center;*/
+	/*display: inline;*/
+	position: absolute;
+	line-height: 40px;
+	top: 0px;
+	right: 10px;
+}
+
+.show-name {
+	display: inline;
+	line-height: 40px;
+}
