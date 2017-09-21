@@ -1,0 +1,22 @@
+<div class="show-detail" *ngIf="show">
+	<div>
+		<div class="input-control">
+			<label>Name:</label>
+			<input [(ngModel)]="copyShow.name">
+		</div>
+		<div class="input-control">
+			<label>Url:</label>
+			<input [(ngModel)]="copyShow.url">
+		</div>
+		<div class="input-control">
+			<label>Description:</label>
+			<input [(ngModel)]="copyShow.description">
+		</div>
+		<div class="input-control">
+			<label>Last Updated:</label>
+			<span>{{copyShow.date}}</span>
+		</div>
+		<div (click)="submit()">Save</div>
+		<div>Cancel</div>
+	</div>
+</div>

@@ -1,0 +1,35 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="header" style="text-align:center">
+  <h2>
+    Welcome to {{title}}!
+  </h2>
+</div>
+<div class="body">
+  <div class="toolbar">
+    <div class="top-btn" (click)="addShow()">
+      <fa name="pencil-square-o"></fa>Add
+    </div>
+  </div>
+  <div *ngIf="newShow">
+    <show-detail [show]="newShow"></show-detail>
+  </div>
+  <div class="row" *ngFor="let show of shows" >
+    <div class="show">
+      <div class="group-left" [class.selected]="show===selectedShow" (click)="onSelect(show)">
+        <div class="emoji">
+          <span *ngIf="show === selectedShow; else elseBlock">🙉</span>
+          <ng-template #elseBlock>🙈</ng-template>
+        </div>
+        <span>{{show.name}}</span>
+      </div>
+    </div>
+    <div class="group-right">
+      <span>{{show.ep}}</span>
+      <div class="ep-btn" (click)="onChange(show, '+')"><span class="plus">+</span></div>
+      <div class="ep-btn" (click)="onChange(show, '-')"><span class="minus">-</span></div>  
+    </div>
+    <div *ngIf="show === selectedShow">
+      <show-detail [show]="selectedShow"></show-detail>
+    </div>
+  </div>
+</div>
