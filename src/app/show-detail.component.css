@@ -1,18 +1,4 @@
-.input-control {
-	width: 96%;
-	margin: 0 2%;
-	margin-bottom: 15px;
-}
-
-.input-control input {
-	box-sizing : border-box;
-	font-size: 16px;
-	width: 100%;
-}
-
 .show-detail {
-	padding-top: 10px;
-	margin: 10px 0px;
-	border: black 1px solid;
-	border-radius: 2px;
+	flex: 1 1 auto;
+	padding: 1.25rem
 }

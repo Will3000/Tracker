@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   shows: Show[];
   selectedShow: Show;
   newShow: Show;
-  
+
 	constructor(private showService: ShowService) { }
 
 	addShow(): void {
@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
 
   onChange(show: Show, sign: string): void {
   	if(sign == '+'){
-	  	show.ep++;  		
+	  	show.ep++;
   	} else {
   		if( show.ep != 0) show.ep--;
   	}

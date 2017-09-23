@@ -26,6 +26,10 @@
 	color: white;
 }
 
+.group-left:hover {
+	cursor: pointer;
+}
+
 .emoji {
 	font-size: 30px;
 	text-align: center;
@@ -36,11 +40,6 @@
 	vertical-align: middle;
 	/*border-right-width: 1px;*/
 	/*border-right: 1px solid white;*/
-}
-
-.group-left:hover,
-.top-btn:hover {
-	cursor: pointer;
 }
 
 .group-right {
@@ -66,11 +65,26 @@
 	font-size:  20px;
 	width: 30px;
 	display: inline-block;
+	cursor: pointer;
 }
 
-.toolbar {
-	text-align: right;
-	margin: 10px;
+.sidebar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100px;
+	background-color: rgba(0,0,0,0.03);
+	padding-left: 5%;
+	/*border-left: 1px black double;*/
+	/*text-align: right;*/
+	/*margin: 10px;*/
+}
+
+.sidebar-btn {
+	color: black;
+	margin-top: 15px;
+	cursor: pointer;
 }
 
 h2 {

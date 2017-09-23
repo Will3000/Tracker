@@ -4,12 +4,19 @@
     Which episode? 🤔
   </h2>
 </div>
+<div class="container page-well">
+  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+    <ngb-panel title="🙈 {{show.name}}" *ngFor="let show of shows">
+      <ng-template ngbPanelContent>
+        <show-detail [show]="show"></show-detail>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</div>
 <div class="body">
-  <div class="toolbar">
-    <div class="top-btn" (click)="addShow()">
-      <fa name="pencil-square-o"></fa>Add
-    </div>
-  </div>
+  <button class="btn btn-primary" type="button" name="button">
+    <fa name="pencil-square-o"></fa>Add
+  </button>
   <div *ngIf="newShow">
     <show-detail [show]="newShow"></show-detail>
   </div>
@@ -30,11 +37,11 @@
     </div>
     <div class="group-right">
         <div class="ep-btn" (click)="onChange(show, '+')"><span class="plus">+</span></div>
-        <div class="ep-btn" (click)="onChange(show, '-')"><span class="minus">-</span></div> 
+        <div class="ep-btn" (click)="onChange(show, '-')"><span class="minus">-</span></div>
     </div>
     <div *ngIf="show === selectedShow">
       <show-detail [show]="selectedShow"></show-detail>
     </div>
-    
+
   </div>
 </div>
