@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 
 import { Show } from './show';
 import { ShowService } from './show.service';
+import {NgbAccordionConfig, NgbPanelChangeEvent} from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ShowService]
+  providers: [ShowService, NgbAccordionConfig]
 })
 
 export class AppComponent implements OnInit {
@@ -15,7 +17,10 @@ export class AppComponent implements OnInit {
   selectedShow: Show;
   newShow: Show;
 
-	constructor(private showService: ShowService) { }
+	constructor(private showService: ShowService, private accordionConfig: NgbAccordionConfig) {
+    accordionConfig.closeOthers = true;
+    accordionConfig.type = "primary";
+  }
 
 	addShow(): void {
     let defaultShow = {
@@ -52,5 +57,13 @@ export class AppComponent implements OnInit {
 
   submit(): void {
 
+  }
+
+  public beforeChange($event: NgbPanelChangeEvent) {
+    console.log($event);
+    // console.log(this);
+    if($event.panelId === "ngb-panel-0"){
+      $event.preventDefault();
+    }
   }
 }

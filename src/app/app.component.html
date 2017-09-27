@@ -5,8 +5,20 @@
   </h2>
 </div>
 <div class="container page-well">
-  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-    <ngb-panel title="🙈 {{show.name}}" *ngFor="let show of shows">
+  <ngb-accordion #acc="ngbAccordion" (panelChange)="beforeChange($event)">
+    <ngb-panel *ngFor="let show of shows">
+      <ng-template ngbPanelTitle >
+        <div class="emoji" (click)="onSelect(show)">
+          <span *ngIf="show === selectedShow; else elseBlock">🙉</span>
+          <ng-template #elseBlock>🙈</ng-template>
+          {{show.name}}
+          {{show.ep}}
+          <div class="ep-btn">
+            <span class="plus" (click)="onChange(show, '+')">+</span>
+            <span class="minus" (click)="onChange(show, '-')">-</span>
+          </div>
+        </div>
+      </ng-template>
       <ng-template ngbPanelContent>
         <show-detail [show]="show"></show-detail>
       </ng-template>
